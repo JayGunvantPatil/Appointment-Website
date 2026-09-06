@@ -115,7 +115,7 @@ export const AdminDashboard = ({
     });
 
     return (
-        <div style={{ display: 'flex', minHeight: '100vh', backgroundcolor: '#334155' }}>
+        <div className="admin-dashboard-container" style={{ display: 'flex', minHeight: '100vh', backgroundcolor: '#334155' }}>
 
             <aside style={{ width: '280px', backgroundColor: '#f8fafc', padding: '2rem 1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', color: '#334155' }}>
 
@@ -440,6 +440,7 @@ export const AdminDashboard = ({
 };
 
 export default AdminDashboard;
+
 
 
 

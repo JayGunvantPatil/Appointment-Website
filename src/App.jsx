@@ -81,7 +81,7 @@ function App() {
                 <p style={{ color: 'var(--text-medium)', fontSize: '1.1rem', margin: '1rem auto 2rem', maxWidth: '600px' }}>Discover our leading specialists dedicated to providing tailored medical excellence.</p>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '3rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '3rem' }}>
                 {managedDoctors.map((doc, index) => (
                   <div key={doc.id} className="card-premium">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>
@@ -145,6 +145,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
