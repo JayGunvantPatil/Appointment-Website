@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* High Contrast Monochrome Theme */
+  --primary-navy: #111827;
+  /* Dark but not too navy dark (Deep Gray/Slate) */
+  --primary-blue: #1f2937;
+  /* Lighter interaction step */
+  --primary-blue-light: #f3f4f6;
+  --primary-blue-pale: #f9fafb;
+
+  --secondary-teal: #111827;
+  --secondary-teal-light: #374151;
+  --secondary-teal-pale: #ffffff;
+
+  --medical-green: #ffffff;
+  --medical-green-dark: #f9fafb;
+
+  --emergency-red: #000000;
+  /* Strictly monochrome accents if possible, fallback to dark */
+  --emergency-red-pale: #f3f4f6;
+
+  --text-dark: #334155;
+  /* Softer slate for main text */
+  --text-medium: #64748b;
+  /* Lighter grey for secondary text */
+  --text-light: #9ca3af;
+
+  --border-color: #cbd5e1;
+  /* Clearly visible crisp borders */
+  --bg-white: #ffffff;
+  --bg-light: #ffffff;
+
+  /* Fonts */
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  /* Ambient glow and shifting replacing heavy drop shadows */
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.02);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.05);
+  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+
+  /* Premium Micro-Interactions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Reset settings */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-white);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Premium Minimalist Utilities */
+.card-premium {
+  border: 1px solid var(--border-color);
+  background-color: #ffffff;
+  transition: all var(--transition-normal);
+  padding: 3rem !important;
+  /* 1.5x padding upgrade */
+}
+
+.card-premium:hover {
+  background-color: #f9fafb;
+  /* ambient shift */
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-2px);
+}
+
+.asymmetric-shift {
+  transform: translateY(-20px) translateX(-10px);
+  position: relative;
+  z-index: 10;
+  border-left: 4px solid var(--primary-navy);
+}
+
+.btn-premium {
+  background-color: var(--primary-navy);
+  color: #ffffff;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.btn-premium:hover {
+  background-color: #000000;
+  transform: scale(0.98);
+}
+
+/* Typography styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--primary-navy);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: 2.25rem;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  color: var(--text-medium);
+  font-size: 1rem;
+}
+
+/* General Layout helpers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 6rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+}
+
+/* Form element styling (more square/architectural) */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  /* Structured look instead of large radiuses */
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background-color: var(--bg-white);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary-navy);
+  box-shadow: 0 0 0 2px rgba(10, 16, 32, 0.1);
+  /* Stark outline instead of soft glow */
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-color: var(--emergency-red);
+  background-color: var(--emergency-red-pale);
+}
+
+/* Buttons style system */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.85rem 2rem;
+  border-radius: 4px;
+  /* Replacing pill shape with structured corners */
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  /* Premium feel */
+  letter-spacing: 0.05em;
+}
+
+.btn-primary {
+  background-color: var(--primary-navy);
+  color: var(--bg-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-blue);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary-navy);
+  border: 2px solid var(--primary-navy);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-navy);
+  color: var(--bg-white);
+}
+
+.btn-danger {
+  background-color: var(--emergency-red);
+  color: var(--bg-white);
+}
+
+.btn-danger:hover {
+  background-color: #b71c1c;
+}
+
+/* Medical Badges */
+.badge-emergency {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: var(--primary-navy);
+  color: var(--bg-white);
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.35rem 1rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Utility Animations */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Base structural overrides to enforce the navy/white request */
+.bg-light {
+  background-color: var(--bg-white) !important;
+}
+
+.hero-section {
+  background-color: var(--bg-white) !important;
+}
+
+/* The user requested "navy blue colour for section". We will create a utility class */
+.bg-navy-section {
+  background-color: var(--primary-navy) !important;
+  color: var(--bg-white) !important;
+}
+
+.bg-navy-section h1,
+.bg-navy-section h2,
+.bg-navy-section h3,
+.bg-navy-section p {
+  color: var(--bg-white) !important;
+}
