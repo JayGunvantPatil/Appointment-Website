@@ -86,16 +86,18 @@ function App() {
                   <div key={doc.id} className="card-premium">
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>
                       {doc.photo_url ? (
-                        <div style={{ width: '48px', height: '48px', borderRadius: '50%', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
-                          <img src={doc.photo_url} alt={doc.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <div style={{ flexShrink: 0, width: '48px', height: '48px', borderRadius: '50%', overflow: 'hidden', border: '1px solid var(--border-color)', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <img src={doc.photo_url} alt={doc.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => { e.target.style.display = 'none'; e.target.parentNode.innerHTML = '<span style="font-size: 2px;">No Photo</span>'; }} />
                         </div>
                       ) : (
-                        <div style={{ padding: '0.75rem', backgroundColor: '#e2e8f0', color: 'var(--text-medium)', borderRadius: '50%' }}>
-                          <MedicalIcon name="UserCircle" size={28} />
+                        <div style={{ flexShrink: 0, width: '48px', height: '48px', padding: '0.5rem', backgroundColor: '#e2e8f0', color: 'var(--text-medium)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <MedicalIcon name="User" size={24} />
                         </div>
                       )}
-                      <h4 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--text-dark)', fontWeight: '600' }}>{doc.name}</h4>
-                      {doc.department && <span style={{ display: 'block', fontSize: '0.85rem', color: '#64748b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.2rem' }}>{doc.department}</span>}
+                      <div style={{ display: 'block', width: '100%' }}>
+                        <h4 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--text-dark)', fontWeight: '600', display: 'block', wordWrap: 'break-word', whiteSpace: 'normal', width: '100%' }}>{doc.name}</h4>
+                        {doc.department && <span style={{ display: 'inline-block', fontSize: '0.8rem', color: '#ffffff', backgroundColor: 'var(--primary-navy)', padding: '0.25rem 0.5rem', borderRadius: '4px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.4rem' }}>{doc.department}</span>}
+                      </div>
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', fontSize: '0.95rem', color: 'var(--text-medium)' }}>
                       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>

@@ -332,7 +332,7 @@ export const AdminDashboard = ({
                                     ) : (
                                         <>
                                             <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                                                {doc.photo_url && <img src={doc.photo_url} alt="Dr" style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} />}
+                                                {doc.photo_url && <img src={doc.photo_url} alt="Dr" style={{ flexShrink: 0, width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }} />}
                                                 <div>
                                                     <h4 style={{ margin: '0 0 0.25rem', color: 'var(--primary-navy)', fontSize: '1.1rem' }}>{doc.name}</h4>
                                                     {doc.department && <span style={{ display: 'block', fontSize: '0.8rem', color: '#64748b', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.4rem' }}>{doc.department}</span>}
@@ -440,6 +440,7 @@ export const AdminDashboard = ({
 };
 
 export default AdminDashboard;
+
 
 
 
