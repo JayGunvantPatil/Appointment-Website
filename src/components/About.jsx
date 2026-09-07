@@ -9,117 +9,224 @@ export const About = () => {
 
                 {/* Section Header */}
                 <div className="section-header animate-slide-up">
-                    <span className="section-subtitle">Clinical Profile</span>
-                    <h2 className="section-title">About {DOCTOR_NAME}</h2>
+                    <span className="section-subtitle">About MedNivo</span>
+
+                    <h2 className="section-title">
+                        About MedNivo
+                    </h2>
+
                     <div className="title-bar"></div>
+
                     <p className="section-desc">
-                        Providing patient-centric clinical diagnosis, treatment monitoring, and preventative consults under the custom banner of **{CLINIC_NAME}**. We integrate medical science and patient care to ensure long-term clinical safety.
+                        MedNivo is a doctor appointment platform designed to make
+                        healthcare access simple and convenient. Patients can
+                        explore doctors, view available medical services, check
+                        appointment availability, and book consultations online.
                     </p>
                 </div>
 
                 {/* Core Pillars Grid */}
                 <div className="about-grid">
 
-                    {/* Card 1: Experience & Focus Areas */}
+                    {/* Card 1: About MedNivo */}
                     <div className="about-card col-span-2">
                         <div className="about-card-icon bg-blue-pale text-blue-600">
-                            <MedicalIcon name="Award" size={28} />
+                            <MedicalIcon name="HeartHandshake" size={28} />
                         </div>
+
                         <div className="about-card-body">
-                            <h3>Experience & Focused Action</h3>
+                            <h3>What is MedNivo?</h3>
+
                             <p>
-                                A senior physician combining decades of critical diagnostics with board-certified hospital residency practice. Specialized in primary care, chronic illnesses, and overall diagnostics.
+                                MedNivo connects patients with doctors through
+                                an easy-to-use online appointment platform.
+                                Our goal is to simplify the process of finding
+                                healthcare professionals and scheduling
+                                consultations.
                             </p>
+
                             <div className="tech-badge-container">
-                                <span className="tech-badge">Board Certified Internist</span>
-                                <span className="tech-badge">15+ Years Medical Experience</span>
-                                <span className="tech-badge">Chronic Care Expert</span>
-                                <span className="tech-badge">Primary Diagnostics</span>
-                                <span className="tech-badge">Preventative Medicine</span>
-                                <span className="tech-badge">Clinical Lifestyle Guidance</span>
+                                <span className="tech-badge">Doctor Discovery</span>
+                                <span className="tech-badge">Online Appointments</span>
+                                <span className="tech-badge">Doctor Profiles</span>
+                                <span className="tech-badge">Medical Services</span>
+                                <span className="tech-badge">Appointment Availability</span>
+                                <span className="tech-badge">Patient-Friendly Platform</span>
                             </div>
                         </div>
                     </div>
 
-                    {/* Card 2: Treatment Philosophy */}
+                    {/* Card 2: How MedNivo Works */}
                     <div className="about-card">
                         <div className="about-card-icon bg-blue-pale text-blue-600">
-                            <MedicalIcon name="HeartHandshake" size={28} />
+                            <MedicalIcon name="Calendar" size={28} />
                         </div>
+
                         <div className="about-card-body">
-                            <h3>Patient Philosophy</h3>
+                            <h3>How MedNivo Works</h3>
+
                             <p>
-                                I believe in active patient collaboration. Therapeutic success is built on patient education, empathetic listening, and shared decision-making.
+                                Find a suitable doctor, explore their profile
+                                and available services, choose an available
+                                appointment slot, and book your consultation.
                             </p>
-                            <span className="synergy-subtext" style={{ fontSize: '0.85rem', color: 'var(--text-light)', fontStyle: 'italic' }}>
-                                Dedicated to your wellness pathway.
+
+                            <span
+                                className="synergy-subtext"
+                                style={{
+                                    fontSize: '0.85rem',
+                                    color: 'var(--text-light)',
+                                    fontStyle: 'italic'
+                                }}
+                            >
+                                Simple healthcare appointment scheduling.
                             </span>
                         </div>
                     </div>
 
-                    {/* Card 3: In-Clinic Diagnostics */}
-                    <div className="about-card border-emergency" style={{ borderColor: 'var(--border-color)' }}>
+                    {/* Card 3: Doctor Information */}
+                    <div
+                        className="about-card border-emergency"
+                        style={{ borderColor: 'var(--border-color)' }}
+                    >
                         <div className="about-card-icon bg-blue-pale text-blue-600">
-                            <MedicalIcon name="Scan" size={28} />
+                            <MedicalIcon name="UserCircle" size={28} />
                         </div>
+
                         <div className="about-card-body">
                             <div className="flex-header">
-                                <h3>In-Clinic Testing Cap</h3>
-                                <span className="card-badge bg-primary" style={{ backgroundColor: 'var(--primary-blue-light)' }}>On-site</span>
+                                <h3>Our Doctor</h3>
+
+                                <span
+                                    className="card-badge bg-primary"
+                                    style={{
+                                        backgroundColor:
+                                            'var(--primary-blue-light)'
+                                    }}
+                                >
+                                    Healthcare
+                                </span>
                             </div>
+
                             <p>
-                                Equipped with basic testing tools to allow fast diagnostic checks during your OPD consultation slot.
+                                MedNivo provides patients with clear information
+                                about available doctors, their areas of practice,
+                                services, and appointment availability.
                             </p>
-                            <ul className="about-list" style={{ listStyle: 'none', padding: 0 }}>
-                                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.875rem' }}>
-                                    <MedicalIcon name="CheckCircle" size={14} className="list-check text-green-500" />
-                                    <span>Immediate 12-lead ECG Rythm Scan</span>
+
+                            <ul
+                                className="about-list"
+                                style={{
+                                    listStyle: 'none',
+                                    padding: 0
+                                }}
+                            >
+                                <li
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        marginBottom: '0.5rem',
+                                        fontSize: '0.875rem'
+                                    }}
+                                >
+                                    <MedicalIcon
+                                        name="CheckCircle"
+                                        size={14}
+                                        className="list-check text-green-500"
+                                    />
+                                    <span>{DOCTOR_NAME}</span>
                                 </li>
-                                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', fontSize: '0.875rem' }}>
-                                    <MedicalIcon name="CheckCircle" size={14} className="list-check text-green-500" />
-                                    <span>Rapid blood sugar & urine analysis panels</span>
+
+                                <li
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        marginBottom: '0.5rem',
+                                        fontSize: '0.875rem'
+                                    }}
+                                >
+                                    <MedicalIcon
+                                        name="CheckCircle"
+                                        size={14}
+                                        className="list-check text-green-500"
+                                    />
+                                    <span>{CLINIC_NAME}</span>
                                 </li>
-                                <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem' }}>
-                                    <MedicalIcon name="CheckCircle" size={14} className="list-check text-green-500" />
-                                    <span>Structured diagnostic lab routing</span>
+
+                                <li
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        fontSize: '0.875rem'
+                                    }}
+                                >
+                                    <MedicalIcon
+                                        name="CheckCircle"
+                                        size={14}
+                                        className="list-check text-green-500"
+                                    />
+                                    <span>Online appointment scheduling</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    {/* Card 4: Care Transparency & Data Privacy */}
+                    {/* Card 4: Patient Experience */}
                     <div className="about-card col-span-2">
                         <div className="about-card-icon bg-blue-pale text-blue-600">
                             <MedicalIcon name="Shield" size={28} />
                         </div>
+
                         <div className="about-card-body">
-                            <h3>Care Privacy & Transparency</h3>
+                            <h3>Designed for a Better Patient Experience</h3>
+
                             <p>
-                                Integrity is at the center of medical support. We enforce high guidelines regarding records security, clear fees, and easy access.
+                                MedNivo focuses on making the appointment
+                                process clear, convenient, and accessible.
+                                Patients can get relevant doctor and service
+                                information before choosing an appointment.
                             </p>
+
                             <div className="compassion-grid">
                                 <div className="compassion-item">
-                                    <strong>No Hidden Charges</strong>
-                                    <span>Consultation fees, dressings, and diagnostics details are explained clearly upfront.</span>
+                                    <strong>Easy Doctor Discovery</strong>
+                                    <span>
+                                        Explore available doctors and their
+                                        professional information.
+                                    </span>
                                 </div>
+
                                 <div className="compassion-item">
-                                    <strong>Data Privacy First</strong>
-                                    <span>Your symptoms record and lab test histories are stored with absolute confidentiality.</span>
+                                    <strong>Simple Booking</strong>
+                                    <span>
+                                        Choose an available appointment slot
+                                        through a straightforward booking process.
+                                    </span>
                                 </div>
+
                                 <div className="compassion-item">
-                                    <strong>Follow-Up Coordination</strong>
-                                    <span>Digital prescriptions summaries are generated and sent straight to your email.</span>
+                                    <strong>Clear Information</strong>
+                                    <span>
+                                        View relevant services and appointment
+                                        information before booking.
+                                    </span>
                                 </div>
+
                                 <div className="compassion-item">
-                                    <strong>Reference Letter Desk</strong>
-                                    <span>Fast assembly of medical referals for advanced hospital procedures.</span>
+                                    <strong>Patient Convenience</strong>
+                                    <span>
+                                        Access appointment information through
+                                        a modern, responsive web platform.
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
-
             </div>
         </section>
     );
