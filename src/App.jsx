@@ -79,8 +79,8 @@ function App() {
           <section style={{ padding: '4rem 2rem 2rem 2rem', backgroundColor: 'transparent', borderBottom: 'none' }}>
             <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
               <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
-                <h1 style={{ fontSize: '3rem', fontWeight: '800', color: 'var(--text-dark)', letterSpacing: '-0.02em', lineHeight: 1.1, paddingBottom: '1rem', margin: 0 }}>Mednivo</h1>
-                <p style={{ color: 'var(--text-medium)', fontSize: '1.25rem', margin: '1rem auto 2rem', maxWidth: '600px' }}>Find doctors and book appointments online.</p>
+                <h2 style={{ fontSize: '2rem', fontWeight: 600, color: 'var(--text-dark)', letterSpacing: '-0.02em', lineHeight: 1.1, paddingBottom: '1rem' }}>Doctor Profiles.</h2>
+                <p style={{ color: 'var(--text-medium)', fontSize: '1.1rem', margin: '1rem auto 2rem', maxWidth: '600px' }}>Discover our leading specialists dedicated to providing tailored medical excellence.</p>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
