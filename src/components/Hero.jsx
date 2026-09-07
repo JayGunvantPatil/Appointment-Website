@@ -19,11 +19,11 @@ export const Hero = ({ setActiveSection, managedDoctors = [] }) => {
                     </div>
 
                     <h1 className="hero-title" style={{ fontSize: '3.75rem', fontWeight: '800', margin: '0 0 2rem', lineHeight: '1.25' }}>
-                        Growing healthier together
+                        MedNivo - Doctor Appointment Platform
                     </h1>
 
                     <p className="hero-subtitle" style={{ fontSize: '1.25rem', margin: '0 auto 3rem', maxWidth: '600px', opacity: 0.9 }}>
-                        Providing modern, clinical-grade primary diagnostics and direct physician consultation. Step into a personalized pathway to long-term wellness.
+                        MedNivo makes it easy to find doctors, explore medical services, and book doctor appointments online.
                     </p>
 
                     <div className="hero-cta-group" style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '0' }}>
