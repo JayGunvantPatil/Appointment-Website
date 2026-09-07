@@ -67,7 +67,7 @@ function App() {
       <header style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0', padding: '1.25rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'sticky', top: 0, zIndex: 100, boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <MedicalIcon name="Stethoscope" size={24} style={{ color: '#000000' }} />
-          <h1 style={{ color: '#000000', fontSize: '1.5rem', fontWeight: 'bold', margin: '0' }}>OmniMedix Supercare</h1>
+          <h1 style={{ color: '#000000', fontSize: '1.5rem', fontWeight: 'bold', margin: '0' }}>Medislot</h1>
         </div>
       </header>
 

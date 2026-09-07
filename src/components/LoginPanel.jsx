@@ -42,7 +42,7 @@ export const LoginPanel = ({ onLoginSuccess, onCancel }) => {
                 {/* White Header Banner using custom image logo */}
                 <div style={{ backgroundColor: '#ffffff', padding: '2.5rem 2rem 1.5rem', textAlign: 'center', color: '#0f172a', borderBottom: '1px solid #f1f5f9' }}>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}><MedicalIcon name="Stethoscope" size={48} style={{ color: '#0f172a' }} /><h2 style={{ margin: 0, fontSize: '1.5rem', fontWeight: '800', fontFamily: 'var(--font-heading)', color: '#0f172a' }}>OmniMedix Supercare</h2></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}><MedicalIcon name="Stethoscope" size={48} style={{ color: '#0f172a' }} /><h2 style={{ margin: 0, fontSize: '1.5rem', fontWeight: '800', fontFamily: 'var(--font-heading)', color: '#0f172a' }}>Medislot</h2></div>
                     <span style={{ fontSize: '0.85rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '0.25rem', display: 'block', fontWeight: 'bold' }}>Authorized Admin Portal</span>
                 </div>
 

@@ -12,7 +12,7 @@ export const Navbar = ({ activeSection, setActiveSection }) => {
                         <img src="/logo.png" alt="Logo" style={{ maxHeight: '32px', filter: 'brightness(0) invert(1)' }} />
                     </div>
                     <div className="logo-text-wrapper">
-                        <span className="logo-title" style={{ fontSize: '1.2rem', color: 'white' }}>OmniMedix Supercare</span>
+                        <span className="logo-title" style={{ fontSize: '1.2rem', color: 'white' }}>Medislot</span>
                         <span className="logo-subtitle" style={{ color: 'rgba(255,255,255,0.7)' }}>Medical Care</span>
                     </div>
                 </a>
