@@ -23,7 +23,9 @@ export const Hero = ({ setActiveSection, managedDoctors = [] }) => {
                     </h1>
 
                     <p className="hero-subtitle" style={{ fontSize: '1.25rem', margin: '0 auto 3rem', maxWidth: '600px', opacity: 0.9 }}>
-                        MedNivo is a doctor appointment platform that helps patients find doctors, explore medical services, check availability, and book appointments online.
+                        MedNivo is a doctor appointment platform that helps patients
+                        discover doctors, explore medical services, check availability,
+                        and book appointments online.
                     </p>
 
                     <div className="hero-cta-group" style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginBottom: '0' }}>

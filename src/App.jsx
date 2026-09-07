@@ -5,6 +5,8 @@ import Footer from './components/Footer';
 import LoginPanel from './components/LoginPanel';
 import AdminDashboard from './components/AdminDashboard';
 import { MedicalIcon } from './components/MedicalIcon';
+import { Hero } from './components/Hero';
+import { About } from './components/About';
 import { supabase } from './supabaseClient';
 import './App.css';
 
@@ -74,6 +76,15 @@ function App() {
       <main style={{ backgroundColor: '#faf8f5', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
 
         <div style={{ flex: 1, paddingBottom: '4rem' }}>
+
+          {/* Hero Section */}
+          <Hero
+            setActiveSection={() => { }}
+            managedDoctors={managedDoctors}
+          />
+
+          {/* About MedNivo Section */}
+          <About />
 
           {/* Doctor Profiles Section */}
           <section style={{ padding: '4rem 2rem 2rem 2rem', backgroundColor: 'transparent', borderBottom: 'none' }}>
