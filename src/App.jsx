@@ -67,7 +67,7 @@ function App() {
       <header style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0', padding: '1.25rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'sticky', top: 0, zIndex: 100, boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <MedicalIcon name="Stethoscope" size={24} style={{ color: '#000000' }} />
-          <h1 style={{ color: '#000000', fontSize: '1.5rem', fontWeight: 'bold', margin: '0' }}>Medislot</h1>
+          <h1 style={{ color: '#000000', fontSize: '1.5rem', fontWeight: 'bold', margin: '0' }}>Mednivo</h1>
         </div>
       </header>
 
@@ -79,8 +79,8 @@ function App() {
           <section style={{ padding: '4rem 2rem 2rem 2rem', backgroundColor: 'transparent', borderBottom: 'none' }}>
             <div className="container" style={{ maxWidth: '1000px', margin: '0 auto' }}>
               <div style={{ marginBottom: '3rem', textAlign: 'center' }}>
-                <h2 style={{ fontSize: '2rem', fontWeight: 600, color: 'var(--text-dark)', letterSpacing: '-0.02em', lineHeight: 1.1, paddingBottom: '1rem' }}>Doctor Profiles.</h2>
-                <p style={{ color: 'var(--text-medium)', fontSize: '1.1rem', margin: '1rem auto 2rem', maxWidth: '600px' }}>Discover our leading specialists dedicated to providing tailored medical excellence.</p>
+                <h1 style={{ fontSize: '3rem', fontWeight: '800', color: 'var(--text-dark)', letterSpacing: '-0.02em', lineHeight: 1.1, paddingBottom: '1rem', margin: 0 }}>Mednivo</h1>
+                <p style={{ color: 'var(--text-medium)', fontSize: '1.25rem', margin: '1rem auto 2rem', maxWidth: '600px' }}>Find doctors and book appointments online.</p>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
