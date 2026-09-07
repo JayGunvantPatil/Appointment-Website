@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import AppointmentForm from './components/AppointmentForm';
 import Footer from './components/Footer';
 import LoginPanel from './components/LoginPanel';
@@ -11,6 +12,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('omnimedix_auth') === 'true');
   const [userRole, setUserRole] = useState(() => localStorage.getItem('omnimedix_role') || null);
   const [showAdminLogin, setShowAdminLogin] = useState(false);
+  const [activeBookingDoctor, setActiveBookingDoctor] = useState(null);
 
   const [managedDoctors, setManagedDoctors] = useState([]);
   const [appointments, setAppointments] = useState([]);
@@ -81,9 +83,10 @@ function App() {
                 <p style={{ color: 'var(--text-medium)', fontSize: '1.1rem', margin: '1rem auto 2rem', maxWidth: '600px' }}>Discover our leading specialists dedicated to providing tailored medical excellence.</p>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '3rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%' }}>
                 {managedDoctors.map((doc, index) => (
-                  <div key={doc.id} className="card-premium">
+
+                  <div key={doc.id} className="card-premium" onClick={() => setActiveBookingDoctor(doc)} style={{ cursor: 'pointer' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '1rem' }}>
                       {doc.photo_url ? (
                         <div style={{ flexShrink: 0, width: '48px', height: '48px', borderRadius: '50%', overflow: 'hidden', border: '1px solid var(--border-color)', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -131,10 +134,18 @@ function App() {
             </div>
           </section>
 
-          {/* Appointment Form Section */}
-          <section style={{ padding: '3rem 2rem 1rem 2rem' }}>
-            <AppointmentForm onAddAppointment={handleAddAppointment} managedDoctors={managedDoctors} appointments={appointments} />
-          </section>
+          {/* Dedicated Doctor Appointment Overlay Modal */}
+          {activeBookingDoctor && ReactDOM.createPortal(
+            <div className="hide-scrollbar" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: '#ffffff', zIndex: 999999, display: 'flex', flexDirection: 'column', overflowY: 'auto' }}>
+              <div style={{ width: '100%', maxWidth: '100%', padding: '3rem 1rem 5rem 1rem', position: 'relative', margin: '0 auto' }}>
+                <button onClick={(e) => { e.stopPropagation(); setActiveBookingDoctor(null); }} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', cursor: 'pointer', color: 'var(--text-dark)', zIndex: 10 }}>
+                  <MedicalIcon name="X" size={24} />
+                </button>
+                <AppointmentForm onAddAppointment={handleAddAppointment} managedDoctors={managedDoctors} appointments={appointments} prefilledDoctor={activeBookingDoctor} onClose={() => setActiveBookingDoctor(null)} />
+              </div>
+            </div>,
+            document.body
+          )}
 
         </div>
 
@@ -147,6 +158,9 @@ function App() {
 }
 
 export default App;
+
+
+
 
 
 

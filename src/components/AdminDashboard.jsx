@@ -82,19 +82,38 @@ export const AdminDashboard = ({
         ));
     };
 
-    const saveReschedule = () => {
-        if (!rescheduleData.date || !rescheduleData.time) return;
-        setAppointments(appointments.map(appt =>
-            appt.id === rescheduleData.id ? {
-                ...appt,
-                date: rescheduleData.date,
-                time: rescheduleData.time,
-                status: 'Scheduled',
-                attended: false
-            } : appt
-        ));
-        setRescheduleData({ id: null, date: '', time: '' });
-    };
+    const saveReschedule = async () => {
+    if (!rescheduleData.date || !rescheduleData.time) return;
+    
+    // Update Supabase Database
+    const { error } = await supabase
+        .from('appointments')
+        .update({
+            appointment_date: rescheduleData.date,
+            appointment_time: rescheduleData.time,
+            status: 'Scheduled',
+            attended: false
+        })
+        .eq('id', rescheduleData.id);
+        
+    if (error) {
+        console.error('Error rescheduling:', error);
+        alert('Failed to reschedule appointment.');
+        return;
+    }
+
+    // Update Local State natively
+    setAppointments(appointments.map(appt =>
+        appt.id === rescheduleData.id ? {
+            ...appt,
+            appointment_date: rescheduleData.date,
+            appointment_time: rescheduleData.time,
+            status: 'Scheduled',
+            attended: false
+        } : appt
+    ));
+    setRescheduleData({ id: null, date: '', time: '' });
+};
 
     // Filter out appointments for today, then sort by time correctly
     const todaysAppointments = appointments
