@@ -15,6 +15,7 @@ function App() {
   const [userRole, setUserRole] = useState(() => localStorage.getItem('omnimedix_role') || null);
   const [showAdminLogin, setShowAdminLogin] = useState(false);
   const [activeBookingDoctor, setActiveBookingDoctor] = useState(null);
+  const [modalContent, setModalContent] = useState(null);
 
   const [managedDoctors, setManagedDoctors] = useState([]);
   const [appointments, setAppointments] = useState([]);
@@ -66,25 +67,19 @@ function App() {
     <div className="app-wrapper">
 
       {/* Top Header - Grey and White variant */}
-      <header style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0', padding: '1.25rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'sticky', top: 0, zIndex: 100, boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
+      <header style={{ backgroundColor: '#ffffff', borderBottom: '1px solid #e2e8f0', padding: '1.25rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'sticky', top: 0, zIndex: 100, boxShadow: '0 2px 10px rgba(0,0,0,0.02)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <MedicalIcon name="Stethoscope" size={24} style={{ color: '#000000' }} />
-          <h1 style={{ color: '#000000', fontSize: '1.5rem', fontWeight: 'bold', margin: '0' }}>Mednivo</h1>
+          <h1 style={{ color: '#000000', fontSize: '1.5rem', fontWeight: 'bold', margin: '0' }}>MedNivo</h1>
         </div>
+        <button onClick={() => setShowAdminLogin(true)} style={{ background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-dark)', padding: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <MedicalIcon name="Menu" size={24} />
+        </button>
       </header>
 
       <main style={{ backgroundColor: '#faf8f5', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
 
         <div style={{ flex: 1, paddingBottom: '4rem' }}>
-
-          {/* Hero Section */}
-          <Hero
-            setActiveSection={() => { }}
-            managedDoctors={managedDoctors}
-          />
-
-          {/* About MedNivo Section */}
-          <About />
 
           {/* Doctor Profiles Section */}
           <section style={{ padding: '4rem 2rem 2rem 2rem', backgroundColor: 'transparent', borderBottom: 'none' }}>
@@ -160,8 +155,53 @@ function App() {
 
         </div>
 
-        {/* Footer (With Doctor Login) */}
-        <Footer setShowAdminLogin={setShowAdminLogin} />
+        {/* Info Modal Overlay for Footer Links */}
+        {modalContent && ReactDOM.createPortal(
+          <div className="hide-scrollbar" style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(4px)', zIndex: 999999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: '90%', maxWidth: '600px', backgroundColor: '#ffffff', borderRadius: '12px', padding: '2rem', position: 'relative', boxShadow: '0 10px 25px rgba(0,0,0,0.1)', maxHeight: '90vh', overflowY: 'auto' }}>
+              <button onClick={(e) => { e.stopPropagation(); setModalContent(null); }} style={{ position: 'absolute', top: '1.5rem', right: '1.5rem', background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', cursor: 'pointer', color: 'var(--text-dark)', zIndex: 10 }}>
+                <MedicalIcon name="X" size={18} />
+              </button>
+
+              {modalContent === 'about' && (
+                <div>
+                  <h2 style={{ fontSize: '1.75rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#0f172a' }}>About MedNivo</h2>
+                  <p style={{ marginBottom: '1rem', color: '#475569', lineHeight: '1.6', fontSize: '1.05rem' }}>MedNivo is a doctor appointment platform designed to make healthcare access simple and convenient. It helps patients find suitable doctors and explore relevant healthcare information in one place. Patients can easily search for doctors and view their details before booking an appointment. Our platform aims to make the appointment booking process faster, easier, and more organized.</p>
+                  <p style={{ color: '#475569', lineHeight: '1.6', fontSize: '1.05rem' }}>MedNivo uses technology to simplify the way patients connect with healthcare professionals. We focus on providing a user-friendly experience that is accessible across different devices. Our goal is to save patients time and make finding the right doctor more convenient. With MedNivo, we strive to make the doctor appointment journey simple, clear, and hassle-free.</p>
+                </div>
+              )}
+
+              {modalContent === 'contact' && (
+                <div>
+                  <h2 style={{ fontSize: '1.75rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#0f172a' }}>Contact Us</h2>
+                  <p style={{ marginBottom: '1.5rem', color: '#475569', lineHeight: '1.6', fontSize: '1.05rem' }}>We'd love to hear from you. For support or general inquiries, please contact us.</p>
+                  <div style={{ padding: '1.25rem', backgroundColor: '#f1f5f9', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '0.75rem', border: '1px solid #e2e8f0' }}>
+                    <MedicalIcon name="Mail" size={20} style={{ color: 'var(--primary-navy)' }} />
+                    <a href="mailto:jaygpatil01@gmail.com" style={{ color: 'var(--primary-navy)', fontWeight: 'bold', textDecoration: 'none', fontSize: '1.1rem' }}>jaygpatil01@gmail.com</a>
+                  </div>
+                </div>
+              )}
+
+              {modalContent === 'privacy' && (
+                <div>
+                  <h2 style={{ fontSize: '1.75rem', fontWeight: 'bold', marginBottom: '1.5rem', color: '#0f172a' }}>Privacy Policy</h2>
+                  <ul style={{ color: '#475569', lineHeight: '1.7', paddingLeft: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '1.05rem', margin: 0 }}>
+                    <li><strong>1. Information Collection:</strong> We collect standard information to facilitate your appointments.</li>
+                    <li><strong>2. Data Sharing:</strong> Your personal details are never sold to external third parties.</li>
+                    <li><strong>3. Medical Independence:</strong> Your medical records belong entirely to you and your consulting physician.</li>
+                    <li><strong>4. Data Protection:</strong> We enforce state-of-the-art encryption across our database servers.</li>
+                    <li><strong>5. Communications:</strong> We only email regarding direct updates to your scheduled bookings.</li>
+                    <li><strong>6. User Rights:</strong> Contact us at any time to have your data scrubbed completely from our systems.</li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>,
+          document.body
+        )}
+
+        {/* Footer (With Brand Separation and Info Links) */}
+        <Footer setModalContent={setModalContent} setShowAdminLogin={setShowAdminLogin} />
       </main>
 
     </div>
