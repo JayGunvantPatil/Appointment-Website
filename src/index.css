@@ -319,10 +319,40 @@ textarea.error {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-*::-webkit-scrollbar { display: none !important; }
-* { -ms-overflow-style: none !important; scrollbar-width: none !important; }
+*::-webkit-scrollbar {
+  display: none !important;
+}
+
+* {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Global Strict Green Action Logic for Buttons */
+button {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button:hover:not(:disabled),
+.btn-premium:hover,
+a.btn:hover {
+  background-color: #10B981 !important;
+  color: #ffffff !important;
+  border-color: #10B981 !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.2) !important;
+}
+
+button:active:not(:disabled),
+.btn-premium:active,
+a.btn:active {
+  background-color: #059669 !important;
+  color: #ffffff !important;
+  border-color: #059669 !important;
+  transform: scale(0.96) !important;
+}

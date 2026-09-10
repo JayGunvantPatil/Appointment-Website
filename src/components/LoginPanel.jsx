@@ -42,7 +42,13 @@ export const LoginPanel = ({ onLoginSuccess, onCancel }) => {
                 {/* White Header Banner using custom image logo */}
                 <div style={{ backgroundColor: '#ffffff', padding: '2.5rem 2rem 1.5rem', textAlign: 'center', color: '#0f172a', borderBottom: '1px solid #f1f5f9' }}>
 
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}><MedicalIcon name="Stethoscope" size={48} style={{ color: '#0f172a' }} /><h2 style={{ margin: 0, fontSize: '1.5rem', fontWeight: '800', fontFamily: 'var(--font-heading)', color: '#0f172a' }}>Mednivo</h2></div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                        <MedicalIcon name="Stethoscope" size={48} style={{ color: '#10B981' }} />
+                        <h2 style={{ margin: 0, fontSize: '1.5rem', fontWeight: '800', fontFamily: 'var(--font-heading)' }}>
+                            <span style={{ color: '#000000' }}>Med</span>
+                            <span style={{ color: '#10B981' }}>Nivo</span>
+                        </h2>
+                    </div>
                     <span style={{ fontSize: '0.85rem', color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: '0.25rem', display: 'block', fontWeight: 'bold' }}>Authorized Admin Portal</span>
                 </div>
 
@@ -81,7 +87,7 @@ export const LoginPanel = ({ onLoginSuccess, onCancel }) => {
                                     style={{ width: '100%', padding: '0.75rem 1rem', border: '1px solid var(--border-color)', borderRadius: '0.5rem', outline: 'none' }}
                                 />
                             </div>
-                            <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '0.75rem', borderRadius: '0.5rem', fontWeight: '600', textAlign: 'center', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', backgroundColor: '#0f172a', color: '#ffffff' }}>
+                            <button type="submit" className="btn btn-primary" style={{ width: '100%', padding: '0.75rem', borderRadius: '0.5rem', fontWeight: '600', textAlign: 'center', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem', backgroundColor: '#10B981', color: '#ffffff' }}>
                                 <MedicalIcon name="LockKeyhole" size={16} />
                                 <span>Secure Login</span>
                             </button>
