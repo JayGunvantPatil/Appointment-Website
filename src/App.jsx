@@ -7,6 +7,7 @@ import AdminDashboard from './components/AdminDashboard';
 import { MedicalIcon } from './components/MedicalIcon';
 import { About } from './components/About';
 import { supabase } from './supabaseClient';
+import icuHero from './assets/icu.jpg';
 import './App.css';
 
 function App() {
@@ -96,8 +97,8 @@ function App() {
 
           {/* New Giant Medial ICU Banner */}
           <section style={{ width: '100%', height: '80vh', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '0 2rem', overflow: 'hidden', borderBottom: '1px solid var(--border-card)' }}>
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'url(/src/assets/icu.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(6px)', zIndex: 1, transform: 'scale(1.05)' }}></div>
-            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(12, 33, 53, 0.8)', zIndex: 2 }}></div>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: `url(${icuHero})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'blur(6px)', zIndex: 1, transform: 'scale(1.05)' }}></div>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(12, 33, 53, 0.45)', zIndex: 2 }}></div>
             <div style={{ position: 'relative', zIndex: 10, maxWidth: '1100px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
               <h2 style={{ fontSize: '40px', fontWeight: 900, color: '#FFFFFF', letterSpacing: '-0.02em', margin: 0, lineHeight: 1.15 }}>Take the Next Step Towards Better Healthcare</h2>
               <p style={{ fontSize: '1.35rem', fontWeight: 600, color: '#10B981', lineHeight: 1.6, margin: '1rem 0 0 0', textShadow: '0 4px 15px rgba(0,0,0,0.8)', maxWidth: '850px' }}>
